@@ -123,9 +123,8 @@ export default function HomePage() {
               <p className="text-text-muted mt-4 max-w-xl mx-auto">From first quote to final furniture placement, we guide you through every step of your move.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {steps.map((step, i) => (
+              {steps.map((step) => (
                 <div key={step.num} className="relative">
-                  {i < steps.length - 1 && <div className="hidden md:block absolute top-6 left-full w-full h-px bg-border z-0 -translate-x-4" />}
                   <div className="relative z-10 flex flex-col items-start">
                     <span className="font-heading text-5xl text-primary/20 mb-3">{step.num}</span>
                     <h3 className="font-heading text-xl text-text-primary mb-2">{step.title}</h3>

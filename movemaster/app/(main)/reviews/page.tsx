@@ -1,19 +1,32 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ReviewCard from '@/components/reviews/ReviewCard';
 import RatingStars from '@/components/ui/RatingStars';
 import Pagination from '@/components/ui/Pagination';
 import { reviews } from '@/data';
+import { useAuth } from '@/context/AuthContext';
 import type { ServiceType } from '@/types';
 
 const PER_PAGE = 12;
 
 export default function ReviewsPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
   const [serviceFilter, setServiceFilter] = useState<ServiceType | ''>('');
   const [ratingFilter, setRatingFilter] = useState<number>(0);
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    if (!loading && user?.role !== 'admin') {
+      router.replace('/');
+    }
+  }, [user, loading, router]);
+
+  if (loading || user?.role !== 'admin') return null;
 
   const filtered = reviews.filter((r) => {
     if (serviceFilter && r.serviceType !== serviceFilter) return false;

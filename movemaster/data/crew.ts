@@ -34,7 +34,7 @@ export const crew: MovingCrew[] = [
   {
     id: 'priya-mehta',
     name: 'Priya Mehta',
-    photo: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face',
+    photo: 'https://i.pinimg.com/1200x/dc/38/28/dc382803a737840ef2526a95445e740f.jpg',
     role: 'coordinator',
     bio: 'Priya is the operational backbone of MoveMaster Pro, serving as our lead Move Coordinator for the GTA region. With a background in project management and a degree from Ryerson University, she brings a meticulous, detail-oriented approach to scheduling, crew dispatch, and client communication. Priya is the person our clients speak with when they first call, and her warmth and professionalism immediately puts even the most stressed movers at ease. She has developed the proprietary "MoveMaster Checklist" system now used across all our crews. Priya tracks every active move in real time, ensuring crews are on time and clients are always informed. She is fluent in English, Hindi, and Gujarati, which has been invaluable for our diverse Southern Ontario client base.',
     yearsExperience: 6,
@@ -49,7 +49,7 @@ export const crew: MovingCrew[] = [
   {
     id: 'tyler-bouchard',
     name: 'Tyler Bouchard',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
+    photo: 'https://i.pinimg.com/1200x/35/ae/d3/35aed3821a6eb1a787c75b0998d39180.jpg',
     role: 'driver',
     bio: 'Tyler is our longest-serving driver, with over a decade behind the wheel of moving trucks across Ontario. He holds a Class A commercial license and has a spotless driving record, which is no small feat given the hundreds of thousands of kilometres he has logged. Tyler is an expert at navigating tight urban streets in downtown Toronto as well as the long highway hauls to Windsor or Niagara Falls. He is also a gifted mechanic who keeps a sharp eye on vehicle maintenance, often catching issues before they become problems. Clients love Tyler because he communicates arrival times precisely and always greets them with a professional handshake. He is the go-to driver for our long-distance moving service.',
     yearsExperience: 11,
@@ -79,7 +79,7 @@ export const crew: MovingCrew[] = [
   {
     id: 'carlos-reyes',
     name: 'Carlos Reyes',
-    photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face',
+    photo: 'https://i.pinimg.com/736x/41/2e/5b/412e5bbb1323b7a76b9da0d804aefe56.jpg',
     role: 'lead-mover',
     bio: 'Carlos brings energy, leadership, and a deep care for client belongings to every move he leads. Originally from Bogotá, Colombia, he came to Canada in 2012 and quickly found his calling in the moving industry. Carlos is Piano Moving Certified — one of only three certified piano movers on our entire team — and handles some of our most technically demanding specialty jobs. He is equally at ease moving a Steinway grand piano as he is coordinating a 20-person office relocation. His fluency in both Spanish and English makes him particularly valuable for the diverse communities across Mississauga and Brampton. Carlos brings a laugh, a plan, and a guarantee that nothing gets scratched.',
     yearsExperience: 9,

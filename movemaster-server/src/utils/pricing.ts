@@ -1,85 +1,46 @@
-import type { QuoteInput, QuoteResult, MoveSize } from '../models/types';
+import type { QuoteInput } from '../models/types';
 
-const HOURLY_RATES: Record<MoveSize, number> = {
-  studio: 129,
-  '1-bedroom': 149,
-  '2-bedroom': 169,
-  '3-bedroom': 199,
-  '4-bedroom': 249,
-  'office-small': 189,
-  'office-large': 229,
+const RATES: Record<string, number> = {
+  studio: 129, '1-bedroom': 149, '2-bedroom': 169,
+  '3-bedroom': 199, '4-bedroom': 249, 'office-small': 189, 'office-large': 229,
 };
-
-const ESTIMATED_HOURS: Record<MoveSize, number> = {
-  studio: 2.5,
-  '1-bedroom': 3.5,
-  '2-bedroom': 5,
-  '3-bedroom': 7,
-  '4-bedroom': 9,
-  'office-small': 6,
-  'office-large': 10,
+const HOURS: Record<string, number> = {
+  studio: 2.5, '1-bedroom': 3.5, '2-bedroom': 5,
+  '3-bedroom': 7, '4-bedroom': 9, 'office-small': 6, 'office-large': 10,
 };
+const GTA = new Set(['Toronto','Mississauga','Brampton','Markham','Vaughan']);
+const FAR = new Set(['Windsor','London','Niagara Falls','St. Catharines','Barrie']);
 
-const GTA_CITIES = new Set(['Toronto', 'Mississauga', 'Brampton', 'Markham', 'Vaughan', 'Etobicoke']);
-const FAR_CITIES = new Set(['Windsor', 'London', 'Niagara Falls', 'St. Catharines', 'Barrie']);
+export function calculateQuote(input: QuoteInput) {
+  const rate  = RATES[input.moveSize] ?? 149;
+  const hours = HOURS[input.moveSize] ?? 4;
+  const base  = rate * hours;
 
-export function calculateQuote(input: QuoteInput): QuoteResult {
-  const hourlyRate = HOURLY_RATES[input.moveSize] ?? 149;
-  const estimatedHours = ESTIMATED_HOURS[input.moveSize] ?? 4;
-  const basePrice = hourlyRate * estimatedHours;
-
-  // Long-distance fee
-  let longDistanceFee = 0;
+  let longDistance = 0;
   if (input.serviceType === 'long-distance' && input.originCity !== input.destinationCity) {
-    const originFar = FAR_CITIES.has(input.originCity);
-    const destFar = FAR_CITIES.has(input.destinationCity);
-    const originGTA = GTA_CITIES.has(input.originCity);
-    const destGTA = GTA_CITIES.has(input.destinationCity);
-
-    if ((originFar || destFar) && !(originFar && destFar)) {
-      longDistanceFee = 900;
-    } else if (!originGTA || !destGTA) {
-      longDistanceFee = 500;
-    } else {
-      longDistanceFee = 200;
-    }
+    const oFar = FAR.has(input.originCity);   const dFar = FAR.has(input.destinationCity);
+    const oGTA = GTA.has(input.originCity);   const dGTA = GTA.has(input.destinationCity);
+    longDistance = (oFar || dFar) && !(oFar && dFar) ? 900 : (!oGTA || !dGTA) ? 500 : 200;
   }
 
-  // Add-ons
-  const packingFee = input.needsPacking ? Math.round(basePrice * 0.3) : 0;
-  const storageFee = input.needsStorage ? 149 : 0;
-  const specialtyFee = input.hasSpecialtyItems ? 250 : 0;
+  const packing   = input.needsPacking      ? Math.round(base * 0.3) : 0;
+  const storage   = input.needsStorage      ? 149 : 0;
+  const specialty = input.hasSpecialtyItems ? 250 : 0;
+  const lastMin   = input.serviceType === 'last-minute' ? Math.round(base * 0.25) : 0;
 
-  // Floor fees (no elevator, above 2nd floor)
-  let floorFee = 0;
+  let floors = 0;
   if (!input.hasElevator) {
-    const originAbove = Math.max(0, (input.floorOrigin ?? 1) - 2);
-    const destAbove = Math.max(0, (input.floorDestination ?? 1) - 2);
-    floorFee = (originAbove + destAbove) * 50;
+    floors = (Math.max(0, input.floorOrigin - 2) + Math.max(0, input.floorDestination - 2)) * 50;
   }
 
-  // Last-minute premium
-  const lastMinutePremium =
-    input.serviceType === 'last-minute' ? Math.round(basePrice * 0.25) : 0;
-
-  const subtotal =
-    basePrice + longDistanceFee + packingFee + storageFee + specialtyFee + floorFee + lastMinutePremium;
-
-  const totalMin = Math.round(subtotal * 0.85);
-  const totalMax = Math.round(subtotal * 1.15);
-  const depositAmount = Math.round(subtotal * 0.2);
+  const sub    = base + longDistance + packing + storage + specialty + lastMin + floors;
+  const depAmt = Math.round(sub * 0.2);
 
   return {
-    estimatedHours,
-    hourlyRate,
-    basePrice,
-    packingFee,
-    storageFee,
-    specialtyFee,
-    floorFee,
-    longDistanceFee,
-    totalMin,
-    totalMax,
-    depositAmount,
+    estimatedHours: hours, hourlyRate: rate, basePrice: base,
+    packingFee: packing, storageFee: storage, specialtyFee: specialty,
+    floorFee: floors, longDistanceFee: longDistance,
+    totalMin: Math.round(sub * 0.85), totalMax: Math.round(sub * 1.15),
+    depositAmount: depAmt,
   };
 }

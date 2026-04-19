@@ -160,6 +160,7 @@ export interface UserProfile {
   email: string;
   phone?: string;
   preferredCity?: string;
+  role?: 'customer' | 'admin' | 'crew';
   createdAt: string;
 }
 

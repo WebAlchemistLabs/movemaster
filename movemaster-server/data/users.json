@@ -1,0 +1,26 @@
+[
+  {
+    "id": "admin-001",
+    "uid": "admin-001",
+    "displayName": "Admin User",
+    "email": "admin@movemaster.pro",
+    "passwordHash": "$2a$12$flZqyNn7fyvo9xYp06UG9.7zPGEFX/TkRGwKJLBYGb4X/zJQWXx96",
+    "role": "admin",
+    "createdAt": "2026-04-19T15:58:34.093Z",
+    "updatedAt": "2026-04-19T16:15:26.603Z",
+    "lastLoginAt": "2026-04-19T16:15:26.603Z"
+  },
+  {
+    "id": "demo-user-001",
+    "uid": "demo-user-001",
+    "displayName": "Demo User",
+    "email": "demo@movemaster.pro",
+    "passwordHash": "$2a$12$v5r8d2NvPEzQVyQC3F1loOjbVukcxUrpLeeRd4KYJf2a6OwrE5F/i",
+    "role": "customer",
+    "phone": "416-555-0100",
+    "preferredCity": "Toronto",
+    "createdAt": "2026-04-19T15:58:34.093Z",
+    "updatedAt": "2026-04-19T15:59:53.088Z",
+    "lastLoginAt": "2026-04-19T15:59:53.088Z"
+  }
+]

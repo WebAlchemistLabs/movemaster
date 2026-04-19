@@ -5,9 +5,8 @@ import Link from 'next/link';
 import { CheckCircle, MapPin, Award, Star } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ReviewCard from '@/components/reviews/ReviewCard';
 import RatingStars from '@/components/ui/RatingStars';
-import { crew, reviews } from '@/data';
+import { crew } from '@/data';
 
 export async function generateStaticParams() {
   return crew.map((m) => ({ id: m.id }));
@@ -24,8 +23,6 @@ const roleLabels: Record<string, string> = { 'lead-mover': 'Lead Mover', packer:
 export default function CrewProfilePage({ params }: { params: { id: string } }) {
   const member = crew.find((m) => m.id === params.id);
   if (!member) notFound();
-
-  const memberReviews = reviews.filter((r) => r.serviceType !== 'storage').slice(0, 3);
 
   return (
     <>
@@ -83,12 +80,6 @@ export default function CrewProfilePage({ params }: { params: { id: string } }) 
                         <CheckCircle size={14} className="text-primary" /> {s}
                       </div>
                     ))}
-                  </div>
-                </div>
-                <div>
-                  <h2 className="font-heading text-3xl text-text-primary mb-6">RECENT REVIEWS</h2>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {memberReviews.map((r) => <ReviewCard key={r.id} review={r} compact />)}
                   </div>
                 </div>
               </div>

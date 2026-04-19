@@ -18,7 +18,7 @@ export default function ServicesPage() {
       <main className="pt-20">
         <div className="bg-surface py-16 border-b border-border">
           <div className="container-custom">
-            <SectionHeader eyebrow="What We Offer" title="MOVING SERVICES" subtitle="Eight specialized moving services built for every situation — from a studio move to a 20-person office relocation. Professional crew, transparent pricing, and zero hidden fees." />
+            <SectionHeader eyebrow="What We Offer" title="MOVING SERVICES" subtitle="Eight specialized moving services built for every situation from a studio move to a 20 person office relocation. Professional crew, transparent pricing, and zero hidden fees." />
           </div>
         </div>
         <section className="section-pad bg-bg">

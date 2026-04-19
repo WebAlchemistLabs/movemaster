@@ -1,0 +1,959 @@
+[
+  {
+    "id": "inv-job-001",
+    "invoiceNumber": "INV-2024-0001",
+    "jobId": "job-001",
+    "clientId": "cli-001",
+    "clientName": "Jennifer Walsh",
+    "clientEmail": "jennifer.walsh@gmail.com",
+    "clientPhone": "416-555-0201",
+    "serviceType": "residential",
+    "moveDate": "2025-02-23",
+    "route": "Toronto → Toronto",
+    "subtotal": 1393,
+    "depositPaid": 279,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-02-15T16:58:34.552Z",
+    "dueAt": "2025-03-02",
+    "paidAt": "2025-02-23T16:58:34.552Z",
+    "lineItems": [
+      {
+        "description": "residential Move (2-bedroom)",
+        "hours": 7,
+        "rate": 199,
+        "amount": 1393
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 418
+      }
+    ],
+    "notes": "3BR, elevator both sides",
+    "createdAt": "2025-02-15T16:58:34.552Z"
+  },
+  {
+    "id": "inv-job-002",
+    "invoiceNumber": "INV-2024-0002",
+    "jobId": "job-002",
+    "clientId": "cli-018",
+    "clientName": "Brian Lemay",
+    "clientEmail": "brian.lemay@rogers.com",
+    "clientPhone": "519-555-1588",
+    "serviceType": "residential",
+    "moveDate": "2024-05-19",
+    "route": "Guelph → Guelph",
+    "subtotal": 2241,
+    "depositPaid": 448,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2024-05-11T15:58:34.552Z",
+    "dueAt": "2024-05-26",
+    "paidAt": "2024-05-19T15:58:34.552Z",
+    "lineItems": [
+      {
+        "description": "residential Move (4-bedroom)",
+        "hours": 9,
+        "rate": 249,
+        "amount": 2241
+      }
+    ],
+    "notes": "Large 4BR, 5-person crew, 10hrs",
+    "createdAt": "2024-05-11T15:58:34.552Z"
+  },
+  {
+    "id": "inv-job-003",
+    "invoiceNumber": "INV-2024-0003",
+    "jobId": "job-003",
+    "clientId": "cli-020",
+    "clientName": "Francois Leblanc",
+    "clientEmail": "f.leblanc@hotmail.com",
+    "clientPhone": "905-555-1800",
+    "serviceType": "residential",
+    "moveDate": "2025-06-03",
+    "route": "Hamilton → Hamilton",
+    "subtotal": 2249,
+    "depositPaid": 450,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-05-26T15:58:34.552Z",
+    "dueAt": "2025-06-10",
+    "paidAt": "2025-06-03T15:58:34.552Z",
+    "lineItems": [
+      {
+        "description": "residential Move (4-bedroom)",
+        "hours": 9,
+        "rate": 249,
+        "amount": 2241
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 672
+      }
+    ],
+    "notes": "5-person crew, tight driveway",
+    "createdAt": "2025-05-26T15:58:34.552Z"
+  },
+  {
+    "id": "inv-job-004",
+    "invoiceNumber": "INV-2024-0004",
+    "jobId": "job-004",
+    "clientId": "cli-011",
+    "clientName": "Robert Tremblay",
+    "clientEmail": "r.tremblay@gmail.com",
+    "clientPhone": "416-555-0811",
+    "serviceType": "long-distance",
+    "moveDate": "2025-07-03",
+    "route": "Toronto → Guelph",
+    "subtotal": 2068,
+    "depositPaid": 414,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-06-25T15:58:34.552Z",
+    "dueAt": "2025-07-10",
+    "paidAt": "2025-07-03T15:58:34.552Z",
+    "lineItems": [
+      {
+        "description": "long-distance Move (3-bedroom)",
+        "hours": 7,
+        "rate": 199,
+        "amount": 1393
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 418
+      },
+      {
+        "description": "Specialty item handling",
+        "amount": 250
+      },
+      {
+        "description": "Long-distance surcharge",
+        "amount": 500
+      }
+    ],
+    "notes": "Antiques wrapped in custom padding",
+    "createdAt": "2025-06-25T15:58:34.552Z"
+  },
+  {
+    "id": "inv-job-005",
+    "invoiceNumber": "INV-2024-0005",
+    "jobId": "job-005",
+    "clientId": "cli-002",
+    "clientName": "David Kim",
+    "clientEmail": "david.kim@outlook.com",
+    "clientPhone": "905-555-0342",
+    "serviceType": "commercial",
+    "moveDate": "2025-04-04",
+    "route": "Toronto → Toronto",
+    "subtotal": 2990,
+    "depositPaid": 598,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-03-27T15:58:34.552Z",
+    "dueAt": "2025-04-11",
+    "paidAt": "2025-04-04T15:58:34.552Z",
+    "lineItems": [
+      {
+        "description": "commercial Move (office-large)",
+        "hours": 10,
+        "rate": 229,
+        "amount": 2290
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 687
+      }
+    ],
+    "notes": "35-person office, IT gear wrapped",
+    "createdAt": "2025-03-27T15:58:34.552Z"
+  },
+  {
+    "id": "inv-job-006",
+    "invoiceNumber": "INV-2024-0006",
+    "jobId": "job-006",
+    "clientId": "cli-012",
+    "clientName": "Nadine Pelletier",
+    "clientEmail": "nadine.p@hotmail.com",
+    "clientPhone": "519-555-0922",
+    "serviceType": "residential",
+    "moveDate": "2025-09-21",
+    "route": "Kitchener → Cambridge",
+    "subtotal": 472,
+    "depositPaid": 94,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-09-13T15:58:34.552Z",
+    "dueAt": "2025-09-28",
+    "paidAt": "2025-09-21T15:58:34.552Z",
+    "lineItems": [
+      {
+        "description": "residential Move (1-bedroom)",
+        "hours": 3.5,
+        "rate": 149,
+        "amount": 521.5
+      }
+    ],
+    "notes": "Small move, completed 45min early",
+    "createdAt": "2025-09-13T15:58:34.552Z"
+  },
+  {
+    "id": "inv-job-007",
+    "invoiceNumber": "INV-2024-0007",
+    "jobId": "job-007",
+    "clientId": "cli-013",
+    "clientName": "Andrew Shapiro",
+    "clientEmail": "andrew.s@rogers.com",
+    "clientPhone": "647-555-1033",
+    "serviceType": "long-distance",
+    "moveDate": "2025-11-10",
+    "route": "Mississauga → London",
+    "subtotal": 1345,
+    "depositPaid": 269,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-11-02T16:58:34.553Z",
+    "dueAt": "2025-11-17",
+    "paidAt": "2025-11-10T16:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "long-distance Move (2-bedroom)",
+        "hours": 5,
+        "rate": 169,
+        "amount": 845
+      },
+      {
+        "description": "Long-distance surcharge",
+        "amount": 500
+      }
+    ],
+    "notes": "London run, smooth highway haul",
+    "createdAt": "2025-11-02T16:58:34.553Z"
+  },
+  {
+    "id": "inv-job-008",
+    "invoiceNumber": "INV-2024-0008",
+    "jobId": "job-008",
+    "clientId": "cli-014",
+    "clientName": "Helen Castillo",
+    "clientEmail": "helen.castillo@gmail.com",
+    "clientPhone": "905-555-1144",
+    "serviceType": "senior",
+    "moveDate": "2025-11-30",
+    "route": "Oakville → Mississauga",
+    "subtotal": 1590,
+    "depositPaid": 318,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-11-22T16:58:34.553Z",
+    "dueAt": "2025-12-07",
+    "paidAt": "2025-11-30T16:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "senior Move (2-bedroom)",
+        "hours": 5,
+        "rate": 159,
+        "amount": 795
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 239
+      }
+    ],
+    "notes": "74yr old client, Amara exceptional",
+    "createdAt": "2025-11-22T16:58:34.553Z"
+  },
+  {
+    "id": "inv-job-009",
+    "invoiceNumber": "INV-2024-0009",
+    "jobId": "job-009",
+    "clientId": "cli-003",
+    "clientName": "Sarah Ogundimu",
+    "clientEmail": "sarah.o@gmail.com",
+    "clientPhone": "416-555-0198",
+    "serviceType": "long-distance",
+    "moveDate": "2025-06-13",
+    "route": "Toronto → Hamilton",
+    "subtotal": 1893,
+    "depositPaid": 379,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-06-05T15:58:34.553Z",
+    "dueAt": "2025-06-20",
+    "paidAt": "2025-06-13T15:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "long-distance Move (3-bedroom)",
+        "hours": 7,
+        "rate": 199,
+        "amount": 1393
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 418
+      },
+      {
+        "description": "Long-distance surcharge",
+        "amount": 500
+      }
+    ],
+    "notes": "Toronto to Hamilton, no road issues",
+    "createdAt": "2025-06-05T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-010",
+    "invoiceNumber": "INV-2024-0010",
+    "jobId": "job-010",
+    "clientId": "cli-004",
+    "clientName": "Michael Bertrand",
+    "clientEmail": "m.bertrand@rogers.com",
+    "clientPhone": "905-555-0477",
+    "serviceType": "senior",
+    "moveDate": "2025-08-12",
+    "route": "Hamilton → Burlington",
+    "subtotal": 1124,
+    "depositPaid": 225,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-08-04T15:58:34.553Z",
+    "dueAt": "2025-08-19",
+    "paidAt": "2025-08-12T15:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "senior Move (2-bedroom)",
+        "hours": 5,
+        "rate": 159,
+        "amount": 795
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 239
+      },
+      {
+        "description": "Storage — 30 day minimum",
+        "amount": 149
+      }
+    ],
+    "notes": "Moving elderly mother, extra care",
+    "createdAt": "2025-08-04T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-011",
+    "invoiceNumber": "INV-2024-0011",
+    "jobId": "job-011",
+    "clientId": "cli-005",
+    "clientName": "Aisha Rahman",
+    "clientEmail": "aisha.rahman@hotmail.com",
+    "clientPhone": "519-555-0211",
+    "serviceType": "packing",
+    "moveDate": "2025-10-01",
+    "route": "Waterloo → Kitchener",
+    "subtotal": 627,
+    "depositPaid": 125,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-09-23T15:58:34.553Z",
+    "dueAt": "2025-10-08",
+    "paidAt": "2025-10-01T15:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "packing Move (1-bedroom)",
+        "hours": 3.5,
+        "rate": 149,
+        "amount": 521.5
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 156
+      }
+    ],
+    "notes": "Full pack, zero breakage reported",
+    "createdAt": "2025-09-23T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-012",
+    "invoiceNumber": "INV-2024-0012",
+    "jobId": "job-012",
+    "clientId": "cli-015",
+    "clientName": "Wanjiru Kamau",
+    "clientEmail": "wanjiru.k@gmail.com",
+    "clientPhone": "647-555-1255",
+    "serviceType": "long-distance",
+    "moveDate": "2026-01-09",
+    "route": "Brampton → London",
+    "subtotal": 1893,
+    "depositPaid": 379,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2026-01-01T16:58:34.553Z",
+    "dueAt": "2026-01-16",
+    "paidAt": "2026-01-09T16:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "long-distance Move (3-bedroom)",
+        "hours": 7,
+        "rate": 199,
+        "amount": 1393
+      },
+      {
+        "description": "Long-distance surcharge",
+        "amount": 500
+      }
+    ],
+    "notes": "Brampton to London relocation",
+    "createdAt": "2026-01-01T16:58:34.553Z"
+  },
+  {
+    "id": "inv-job-013",
+    "invoiceNumber": "INV-2024-0013",
+    "jobId": "job-013",
+    "clientId": "cli-016",
+    "clientName": "Tony Marchetti",
+    "clientEmail": "tony.m@bell.net",
+    "clientPhone": "905-555-1366",
+    "serviceType": "specialty",
+    "moveDate": "2026-02-03",
+    "route": "Hamilton → Oakville",
+    "subtotal": 2100,
+    "depositPaid": 420,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2026-01-26T16:58:34.553Z",
+    "dueAt": "2026-02-10",
+    "paidAt": "2026-02-03T16:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "specialty Move (4-bedroom)",
+        "hours": 9,
+        "rate": 249,
+        "amount": 2241
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 672
+      },
+      {
+        "description": "Specialty item handling",
+        "amount": 250
+      }
+    ],
+    "notes": "Pool table disassembly — perfect",
+    "createdAt": "2026-01-26T16:58:34.553Z"
+  },
+  {
+    "id": "inv-job-014",
+    "invoiceNumber": "INV-2024-0014",
+    "jobId": "job-014",
+    "clientId": "cli-017",
+    "clientName": "Michelle Tran",
+    "clientEmail": "michelle.tran@gmail.com",
+    "clientPhone": "416-555-1477",
+    "serviceType": "residential",
+    "moveDate": "2026-02-23",
+    "route": "Toronto → Mississauga",
+    "subtotal": 845,
+    "depositPaid": 169,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2026-02-15T16:58:34.553Z",
+    "dueAt": "2026-03-02",
+    "paidAt": "2026-02-23T16:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "residential Move (2-bedroom)",
+        "hours": 5,
+        "rate": 169,
+        "amount": 845
+      }
+    ],
+    "notes": "Condo to condo, elevator both sides",
+    "createdAt": "2026-02-15T16:58:34.553Z"
+  },
+  {
+    "id": "inv-job-015",
+    "invoiceNumber": "INV-2024-0015",
+    "jobId": "job-015",
+    "clientId": "cli-018",
+    "clientName": "Brian Lemay",
+    "clientEmail": "brian.lemay@rogers.com",
+    "clientPhone": "519-555-1588",
+    "serviceType": "long-distance",
+    "moveDate": "2025-03-15",
+    "route": "Guelph → Hamilton",
+    "subtotal": 2741,
+    "depositPaid": 548,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-03-07T16:58:34.553Z",
+    "dueAt": "2025-03-22",
+    "paidAt": "2025-03-15T15:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "long-distance Move (4-bedroom)",
+        "hours": 9,
+        "rate": 249,
+        "amount": 2241
+      },
+      {
+        "description": "Long-distance surcharge",
+        "amount": 500
+      }
+    ],
+    "notes": "2nd move with Brian — VIP treatment",
+    "createdAt": "2025-03-07T16:58:34.553Z"
+  },
+  {
+    "id": "inv-job-016",
+    "invoiceNumber": "INV-2024-0016",
+    "jobId": "job-016",
+    "clientId": "cli-019",
+    "clientName": "Chioma Eze",
+    "clientEmail": "chioma.eze@gmail.com",
+    "clientPhone": "416-555-1699",
+    "serviceType": "storage",
+    "moveDate": "2026-03-05",
+    "route": "Toronto → Toronto",
+    "subtotal": 1100,
+    "depositPaid": 220,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2026-02-25T16:58:34.553Z",
+    "dueAt": "2026-03-12",
+    "paidAt": "2026-03-05T16:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "storage Move (2-bedroom)",
+        "hours": 3,
+        "rate": 169,
+        "amount": 507
+      },
+      {
+        "description": "Storage — 30 day minimum",
+        "amount": 149
+      }
+    ],
+    "notes": "4-week storage bridge, clean pickup",
+    "createdAt": "2026-02-25T16:58:34.553Z"
+  },
+  {
+    "id": "inv-job-017",
+    "invoiceNumber": "INV-2024-0017",
+    "jobId": "job-017",
+    "clientId": "cli-001",
+    "clientName": "Jennifer Walsh",
+    "clientEmail": "jennifer.walsh@gmail.com",
+    "clientPhone": "416-555-0201",
+    "serviceType": "residential",
+    "moveDate": "2025-10-01",
+    "route": "Toronto → Toronto",
+    "subtotal": 1393,
+    "depositPaid": 279,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-09-23T15:58:34.553Z",
+    "dueAt": "2025-10-08",
+    "paidAt": "2025-10-01T15:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "residential Move (3-bedroom)",
+        "hours": 7,
+        "rate": 199,
+        "amount": 1393
+      }
+    ],
+    "notes": "2nd Jennifer move — booked same day",
+    "createdAt": "2025-09-23T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-018",
+    "invoiceNumber": "INV-2024-0018",
+    "jobId": "job-018",
+    "clientId": "cli-006",
+    "clientName": "Carlos Evangelista",
+    "clientEmail": "carlos.e@gmail.com",
+    "clientPhone": "647-555-0389",
+    "serviceType": "last-minute",
+    "moveDate": "2025-10-21",
+    "route": "Brampton → Mississauga",
+    "subtotal": 1056,
+    "depositPaid": 211,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2025-10-19T15:58:34.553Z",
+    "dueAt": "2025-10-28",
+    "paidAt": "2025-10-21T15:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "last-minute Move (2-bedroom)",
+        "hours": 5,
+        "rate": 199,
+        "amount": 995
+      }
+    ],
+    "notes": "SOS move, 24hr notice — perfect exec",
+    "createdAt": "2025-10-19T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-019",
+    "invoiceNumber": "INV-2024-0019",
+    "jobId": "job-019",
+    "clientId": "cli-002",
+    "clientName": "David Kim",
+    "clientEmail": "david.kim@outlook.com",
+    "clientPhone": "905-555-0342",
+    "serviceType": "commercial",
+    "moveDate": "2026-03-12",
+    "route": "Toronto → Toronto",
+    "subtotal": 1395,
+    "depositPaid": 279,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2026-03-04T16:58:34.553Z",
+    "dueAt": "2026-03-19",
+    "paidAt": "2026-03-12T15:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "commercial Move (office-small)",
+        "hours": 6,
+        "rate": 189,
+        "amount": 1134
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 340
+      }
+    ],
+    "notes": "2nd office move, flawless execution",
+    "createdAt": "2026-03-04T16:58:34.553Z"
+  },
+  {
+    "id": "inv-job-020",
+    "invoiceNumber": "INV-2024-0020",
+    "jobId": "job-020",
+    "clientId": "cli-018",
+    "clientName": "Brian Lemay",
+    "clientEmail": "brian.lemay@rogers.com",
+    "clientPhone": "519-555-1588",
+    "serviceType": "residential",
+    "moveDate": "2026-03-20",
+    "route": "Hamilton → London",
+    "subtotal": 2241,
+    "depositPaid": 448,
+    "balanceDue": 0,
+    "status": "paid",
+    "issuedAt": "2026-03-12T15:58:34.553Z",
+    "dueAt": "2026-03-27",
+    "paidAt": "2026-03-20T15:58:34.553Z",
+    "lineItems": [
+      {
+        "description": "residential Move (4-bedroom)",
+        "hours": 9,
+        "rate": 249,
+        "amount": 2241
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 672
+      }
+    ],
+    "notes": "3rd Brian move — loyal 2yr client",
+    "createdAt": "2026-03-12T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-021",
+    "invoiceNumber": "INV-2024-0021",
+    "jobId": "job-021",
+    "clientId": "cli-007",
+    "clientName": "Patricia Kowalczyk",
+    "clientEmail": "pat.kowalczyk@bell.net",
+    "clientPhone": "416-555-0522",
+    "serviceType": "specialty",
+    "moveDate": "2026-04-18",
+    "route": "Toronto → Oakville",
+    "subtotal": 3249,
+    "depositPaid": 650,
+    "balanceDue": 2599,
+    "status": "partial",
+    "issuedAt": "2026-04-07T15:58:34.553Z",
+    "dueAt": "2026-04-25",
+    "lineItems": [
+      {
+        "description": "specialty Move (4-bedroom)",
+        "hours": 9,
+        "rate": 249,
+        "amount": 2241
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 672
+      },
+      {
+        "description": "Specialty item handling",
+        "amount": 250
+      }
+    ],
+    "notes": "Piano certified crew assigned today",
+    "createdAt": "2026-04-07T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-022",
+    "invoiceNumber": "INV-2024-0022",
+    "jobId": "job-022",
+    "clientId": "cli-008",
+    "clientName": "Tanya Fournier",
+    "clientEmail": "tanya.fournier@gmail.com",
+    "clientPhone": "705-555-0167",
+    "serviceType": "long-distance",
+    "moveDate": "2026-04-22",
+    "route": "Toronto → Barrie",
+    "subtotal": 3149,
+    "depositPaid": 630,
+    "balanceDue": 2519,
+    "status": "partial",
+    "issuedAt": "2026-04-05T15:58:34.553Z",
+    "dueAt": "2026-04-29",
+    "lineItems": [
+      {
+        "description": "long-distance Move (4-bedroom)",
+        "hours": 9,
+        "rate": 249,
+        "amount": 2241
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 672
+      },
+      {
+        "description": "Long-distance surcharge",
+        "amount": 500
+      }
+    ],
+    "notes": "Long driveway at destination",
+    "createdAt": "2026-04-05T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-023",
+    "invoiceNumber": "INV-2024-0023",
+    "jobId": "job-023",
+    "clientId": "cli-009",
+    "clientName": "George Nikolaou",
+    "clientEmail": "g.nikolaou@gmail.com",
+    "clientPhone": "416-555-0633",
+    "serviceType": "residential",
+    "moveDate": "2026-04-24",
+    "route": "Toronto → Toronto",
+    "subtotal": 323,
+    "depositPaid": 65,
+    "balanceDue": 258,
+    "status": "partial",
+    "issuedAt": "2026-04-11T15:58:34.553Z",
+    "dueAt": "2026-05-01",
+    "lineItems": [
+      {
+        "description": "residential Move (studio)",
+        "hours": 2.5,
+        "rate": 129,
+        "amount": 322.5
+      }
+    ],
+    "notes": "Condo to condo, elevator confirmed",
+    "createdAt": "2026-04-11T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-024",
+    "invoiceNumber": "INV-2024-0024",
+    "jobId": "job-024",
+    "clientId": "cli-010",
+    "clientName": "Linda Morrison",
+    "clientEmail": "linda.morrison@rogers.com",
+    "clientPhone": "905-555-0744",
+    "serviceType": "residential",
+    "moveDate": "2026-04-27",
+    "route": "Burlington → Oakville",
+    "subtotal": 1813,
+    "depositPaid": 363,
+    "balanceDue": 1450,
+    "status": "partial",
+    "issuedAt": "2026-04-14T15:58:34.553Z",
+    "dueAt": "2026-05-04",
+    "lineItems": [
+      {
+        "description": "residential Move (3-bedroom)",
+        "hours": 7,
+        "rate": 199,
+        "amount": 1393
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 418
+      }
+    ],
+    "notes": "Packing booked for day before move",
+    "createdAt": "2026-04-14T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-025",
+    "invoiceNumber": "INV-2024-0025",
+    "jobId": "job-025",
+    "clientId": "cli-006",
+    "clientName": "Carlos Evangelista",
+    "clientEmail": "carlos.e@gmail.com",
+    "clientPhone": "647-555-0389",
+    "serviceType": "commercial",
+    "moveDate": "2026-05-01",
+    "route": "Kitchener → Waterloo",
+    "subtotal": 1474,
+    "depositPaid": 295,
+    "balanceDue": 1179,
+    "status": "partial",
+    "issuedAt": "2026-04-15T15:58:34.553Z",
+    "dueAt": "2026-05-08",
+    "lineItems": [
+      {
+        "description": "commercial Move (office-small)",
+        "hours": 6,
+        "rate": 189,
+        "amount": 1134
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 340
+      }
+    ],
+    "notes": "Weekend only — Sunday 5pm deadline",
+    "createdAt": "2026-04-15T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-026",
+    "invoiceNumber": "INV-2024-0026",
+    "jobId": "job-026",
+    "clientId": "cli-003",
+    "clientName": "Sarah Ogundimu",
+    "clientEmail": "sarah.o@gmail.com",
+    "clientPhone": "416-555-0198",
+    "serviceType": "residential",
+    "moveDate": "2026-05-03",
+    "route": "Toronto → Burlington",
+    "subtotal": 994,
+    "depositPaid": 199,
+    "balanceDue": 795,
+    "status": "unpaid",
+    "issuedAt": "2026-04-18T15:58:34.553Z",
+    "dueAt": "2026-05-10",
+    "lineItems": [
+      {
+        "description": "residential Move (2-bedroom)",
+        "hours": 5,
+        "rate": 169,
+        "amount": 845
+      },
+      {
+        "description": "Storage — 30 day minimum",
+        "amount": 149
+      }
+    ],
+    "notes": "Storage needed, dates flexible",
+    "createdAt": "2026-04-18T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-027",
+    "invoiceNumber": "INV-2024-0027",
+    "jobId": "job-027",
+    "clientName": "Robert Chen",
+    "clientEmail": "r.chen@gmail.com",
+    "clientPhone": "416-555-2811",
+    "serviceType": "long-distance",
+    "moveDate": "2026-05-07",
+    "route": "Toronto → Guelph",
+    "subtotal": 2068,
+    "depositPaid": 414,
+    "balanceDue": 1654,
+    "status": "unpaid",
+    "issuedAt": "2026-04-19T15:58:34.553Z",
+    "dueAt": "2026-05-14",
+    "lineItems": [
+      {
+        "description": "long-distance Move (3-bedroom)",
+        "hours": 7,
+        "rate": 199,
+        "amount": 1393
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 418
+      },
+      {
+        "description": "Specialty item handling",
+        "amount": 250
+      },
+      {
+        "description": "Long-distance surcharge",
+        "amount": 500
+      }
+    ],
+    "notes": "Specialty crew needed for antiques",
+    "createdAt": "2026-04-19T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-028",
+    "invoiceNumber": "INV-2024-0028",
+    "jobId": "job-028",
+    "clientName": "Priya Singh",
+    "clientEmail": "priya.s@hotmail.com",
+    "clientPhone": "519-555-2922",
+    "serviceType": "residential",
+    "moveDate": "2026-05-10",
+    "route": "Kitchener → Cambridge",
+    "subtotal": 472,
+    "depositPaid": 94,
+    "balanceDue": 378,
+    "status": "unpaid",
+    "issuedAt": "2026-04-19T15:58:34.553Z",
+    "dueAt": "2026-05-17",
+    "lineItems": [
+      {
+        "description": "residential Move (1-bedroom)",
+        "hours": 3.5,
+        "rate": 149,
+        "amount": 521.5
+      }
+    ],
+    "createdAt": "2026-04-19T15:58:34.553Z"
+  },
+  {
+    "id": "inv-job-029",
+    "invoiceNumber": "INV-2024-0029",
+    "jobId": "job-029",
+    "clientId": "cli-001",
+    "clientName": "Jennifer Walsh",
+    "clientEmail": "jennifer.walsh@gmail.com",
+    "clientPhone": "416-555-0201",
+    "serviceType": "residential",
+    "moveDate": "2026-05-14",
+    "route": "Toronto → Oakville",
+    "subtotal": 3544,
+    "depositPaid": 709,
+    "balanceDue": 2835,
+    "status": "unpaid",
+    "issuedAt": "2026-04-19T15:58:34.553Z",
+    "dueAt": "2026-05-21",
+    "lineItems": [
+      {
+        "description": "residential Move (4-bedroom)",
+        "hours": 9,
+        "rate": 249,
+        "amount": 2241
+      },
+      {
+        "description": "Full packing service (+30%)",
+        "amount": 672
+      },
+      {
+        "description": "Specialty item handling",
+        "amount": 250
+      }
+    ],
+    "notes": "3rd Jennifer move — VIP client",
+    "createdAt": "2026-04-19T15:58:34.553Z"
+  }
+]

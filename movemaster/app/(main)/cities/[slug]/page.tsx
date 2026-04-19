@@ -5,9 +5,8 @@ import Link from 'next/link';
 import { MapPin, Star, CheckCircle } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ReviewCard from '@/components/reviews/ReviewCard';
 import CrewCard from '@/components/crew/CrewCard';
-import { cities, reviews, crew, services } from '@/data';
+import { cities, crew, services } from '@/data';
 
 export async function generateStaticParams() {
   return cities.map((c) => ({ slug: c.slug }));
@@ -32,7 +31,6 @@ export default function CityPage({ params }: { params: { slug: string } }) {
   const city = cities.find((c) => c.slug === params.slug);
   if (!city) notFound();
 
-  const cityReviews = reviews.filter((r) => r.originCity === city.name || r.destinationCity === city.name).slice(0, 3);
   const cityCrew = crew.filter((m) => m.cities.includes(city.name)).slice(0, 4);
   const tips = cityTips[city.slug] ?? cityTips.default;
 
@@ -87,15 +85,6 @@ export default function CityPage({ params }: { params: { slug: string } }) {
                     ))}
                   </div>
                 </div>
-
-                {cityReviews.length > 0 && (
-                  <div>
-                    <h2 className="font-heading text-3xl text-text-primary mb-6">{city.name.toUpperCase()} CLIENT REVIEWS</h2>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {cityReviews.map((r) => <ReviewCard key={r.id} review={r} compact />)}
-                    </div>
-                  </div>
-                )}
 
                 {cityCrew.length > 0 && (
                   <div>

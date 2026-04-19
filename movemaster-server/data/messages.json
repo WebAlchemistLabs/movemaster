@@ -1,0 +1,52 @@
+[
+  {
+    "id": "BK2ODRB89",
+    "name": "Olivia Bergmann",
+    "email": "olivia.b@gmail.com",
+    "phone": "905-555-2100",
+    "serviceType": "residential",
+    "message": "Need to move a 2-bedroom in St. Catharines next month. Do you service that area?",
+    "read": true,
+    "createdAt": "2026-04-11T15:58:34.555Z"
+  },
+  {
+    "id": "AT12YBEFH",
+    "name": "Henry Obasi",
+    "email": "henry.o@rogers.com",
+    "phone": "416-555-2211",
+    "serviceType": "last-minute",
+    "message": "Family emergency — need to move within 48 hours. Is that possible?",
+    "read": true,
+    "createdAt": "2026-04-14T15:58:34.555Z"
+  },
+  {
+    "id": "VA8YTJNB2",
+    "name": "Christina Yip",
+    "email": "christina.y@gmail.com",
+    "phone": "647-555-2322",
+    "serviceType": "residential",
+    "message": "Looking to move Toronto to Barrie in about 6 weeks. Can I get a quote?",
+    "read": false,
+    "createdAt": "2026-04-17T15:58:34.555Z"
+  },
+  {
+    "id": "4RHWMEYEB",
+    "name": "Derek Johannsen",
+    "email": "derek.j@hotmail.com",
+    "phone": "519-555-2433",
+    "serviceType": "commercial",
+    "message": "20-person company relocating offices in Waterloo. Weekend move required. Please call.",
+    "read": false,
+    "createdAt": "2026-04-18T15:58:34.555Z"
+  },
+  {
+    "id": "F6E5LEEK5",
+    "name": "Leah Blackwood",
+    "email": "leah.b@gmail.com",
+    "phone": "416-555-2544",
+    "serviceType": "storage",
+    "message": "Need storage for 6 weeks between closing dates. What unit sizes do you have?",
+    "read": false,
+    "createdAt": "2026-04-19T15:58:34.555Z"
+  }
+]

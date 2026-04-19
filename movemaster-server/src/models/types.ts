@@ -1,47 +1,54 @@
-// ─── Shared Domain Types ─────────────────────────────────────────────────────
+export type ServiceType = 'residential'|'commercial'|'long-distance'|'packing'|'storage'|'specialty'|'last-minute'|'senior';
+export type MoveSize = 'studio'|'1-bedroom'|'2-bedroom'|'3-bedroom'|'4-bedroom'|'office-small'|'office-large';
+export type BookingStatus = 'pending'|'confirmed'|'in-progress'|'completed'|'cancelled';
+export type UserRole = 'customer'|'admin'|'crew';
 
-export type ServiceType =
-  | 'residential'
-  | 'commercial'
-  | 'long-distance'
-  | 'packing'
-  | 'storage'
-  | 'specialty'
-  | 'last-minute'
-  | 'senior';
-
-export type MoveSize =
-  | 'studio'
-  | '1-bedroom'
-  | '2-bedroom'
-  | '3-bedroom'
-  | '4-bedroom'
-  | 'office-small'
-  | 'office-large';
-
-export type BookingStatus =
-  | 'pending'
-  | 'confirmed'
-  | 'in-progress'
-  | 'completed'
-  | 'cancelled';
-
-export type UserRole = 'customer' | 'admin' | 'crew';
-
-// ─── Quote / Booking ─────────────────────────────────────────────────────────
-
-export interface QuoteRequest {
+export interface User {
   id: string;
+  uid: string;
+  displayName: string;
+  email: string;
+  passwordHash: string;
+  phone?: string;
+  preferredCity?: string;
+  role: UserRole;
+  createdAt: string;
+  updatedAt: string;
+  lastLoginAt?: string;
+}
+
+export interface Client {
+  id: string;
+  uid?: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  address?: string;
+  city?: string;
+  postalCode?: string;
+  notes?: string;
+  totalMoves: number;
+  totalSpent: number;
+  firstMoveDate?: string;
+  lastMoveDate?: string;
+  referralSource?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Job {
+  id: string;
+  clientId?: string;
   uid?: string;
   name: string;
   email: string;
   phone: string;
-  moveDate: string;
+  moveDate?: string;
   moveSize: MoveSize;
   serviceType: ServiceType;
-  originAddress: string;
+  originAddress?: string;
   originCity: string;
-  destinationAddress: string;
+  destinationAddress?: string;
   destinationCity: string;
   needsPacking: boolean;
   needsStorage: boolean;
@@ -51,16 +58,80 @@ export interface QuoteRequest {
   floorDestination: number;
   hasElevator: boolean;
   estimatedHours?: number;
+  hourlyRate?: number;
   estimatedPrice?: number;
+  finalPrice?: number;
   status: BookingStatus;
+  assignedCrew?: string;
   notes?: string;
-  createdAt: string;
-  updatedAt: string;
-  assignedCrewId?: string;
+  hearAboutUs?: string;
   depositPaid: boolean;
   depositAmount?: number;
-  stripePaymentIntentId?: string;
-  hearAboutUs?: string;
+  depositPaidAt?: string;
+  invoiceNumber?: string;
+  createdAt: string;
+  updatedAt: string;
+  completedAt?: string;
+}
+
+export interface Invoice {
+  id: string;
+  invoiceNumber: string;
+  jobId: string;
+  clientId?: string;
+  clientName: string;
+  clientEmail: string;
+  clientPhone?: string;
+  serviceType: string;
+  moveDate?: string;
+  route: string;
+  subtotal: number;
+  depositPaid: number;
+  balanceDue: number;
+  status: 'unpaid'|'partial'|'paid';
+  issuedAt: string;
+  dueAt?: string;
+  paidAt?: string;
+  lineItems: LineItem[];
+  notes?: string;
+  createdAt: string;
+}
+
+export interface LineItem {
+  description: string;
+  hours?: number;
+  rate?: number;
+  amount: number;
+}
+
+export interface Transaction {
+  id: string;
+  jobId?: string;
+  invoiceId?: string;
+  clientId?: string;
+  type: 'deposit'|'balance'|'refund'|'other';
+  amount: number;
+  method: string;
+  description: string;
+  status: 'completed'|'pending'|'failed';
+  createdAt: string;
+}
+
+export interface ContactMessage {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  serviceType?: string;
+  message: string;
+  read: boolean;
+  createdAt: string;
+}
+
+export interface AuthTokens {
+  accessToken: string;
+  refreshToken: string;
+  expiresIn: number;
 }
 
 export interface QuoteInput {
@@ -74,92 +145,4 @@ export interface QuoteInput {
   floorOrigin: number;
   floorDestination: number;
   hasElevator: boolean;
-}
-
-export interface QuoteResult {
-  estimatedHours: number;
-  hourlyRate: number;
-  basePrice: number;
-  packingFee: number;
-  storageFee: number;
-  specialtyFee: number;
-  floorFee: number;
-  longDistanceFee: number;
-  totalMin: number;
-  totalMax: number;
-  depositAmount: number;
-}
-
-// ─── User ─────────────────────────────────────────────────────────────────────
-
-export interface User {
-  uid: string;
-  displayName: string;
-  email: string;
-  phone?: string;
-  preferredCity?: string;
-  role: UserRole;
-  createdAt: string;
-  updatedAt: string;
-  lastLoginAt?: string;
-}
-
-export interface AuthTokens {
-  accessToken: string;
-  refreshToken: string;
-  expiresIn: number;
-}
-
-// ─── Contact ──────────────────────────────────────────────────────────────────
-
-export interface ContactMessage {
-  id: string;
-  name: string;
-  email: string;
-  phone?: string;
-  serviceType?: string;
-  message: string;
-  createdAt: string;
-  read: boolean;
-}
-
-// ─── Stripe ───────────────────────────────────────────────────────────────────
-
-export interface PaymentIntentResponse {
-  clientSecret: string;
-  paymentIntentId: string;
-  amount: number;
-  currency: string;
-}
-
-// ─── API Response Wrappers ───────────────────────────────────────────────────
-
-export interface ApiSuccess<T = unknown> {
-  success: true;
-  data: T;
-  message?: string;
-  meta?: {
-    total?: number;
-    page?: number;
-    perPage?: number;
-    pages?: number;
-  };
-}
-
-export interface ApiError {
-  success: false;
-  error: string;
-  code?: string;
-  details?: Record<string, string[]>;
-}
-
-export type ApiResponse<T = unknown> = ApiSuccess<T> | ApiError;
-
-// ─── Pagination ───────────────────────────────────────────────────────────────
-
-export interface PaginationQuery {
-  page?: number;
-  perPage?: number;
-  sortBy?: string;
-  sortDir?: 'asc' | 'desc';
 }

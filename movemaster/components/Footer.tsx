@@ -21,9 +21,9 @@ export default function Footer() {
               Southern Ontario&apos;s most trusted moving company since 2010. Over 12,400 moves and counting.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-8 h-8 rounded border border-border flex items-center justify-center text-text-muted hover:border-primary hover:text-primary transition-colors"><Facebook size={14} /></a>
-              <a href="#" className="w-8 h-8 rounded border border-border flex items-center justify-center text-text-muted hover:border-primary hover:text-primary transition-colors"><Instagram size={14} /></a>
-              <a href="#" className="w-8 h-8 rounded border border-border flex items-center justify-center text-text-muted hover:border-primary hover:text-primary transition-colors"><Linkedin size={14} /></a>
+              <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Visit our Facebook page" className="w-8 h-8 rounded border border-border flex items-center justify-center text-text-muted hover:border-primary hover:text-primary transition-colors"><Facebook size={14} /></a>
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Visit our Instagram page" className="w-8 h-8 rounded border border-border flex items-center justify-center text-text-muted hover:border-primary hover:text-primary transition-colors"><Instagram size={14} /></a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="Visit our LinkedIn page" className="w-8 h-8 rounded border border-border flex items-center justify-center text-text-muted hover:border-primary hover:text-primary transition-colors"><Linkedin size={14} /></a>
             </div>
           </div>
 

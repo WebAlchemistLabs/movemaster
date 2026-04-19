@@ -11,7 +11,6 @@ const nav = [
   { label: 'Cities', href: '/cities' },
   { label: 'Crew', href: '/crew' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Reviews', href: '/reviews' },
   { label: 'About', href: '/about' },
 ];
 
@@ -46,6 +45,11 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+            {user?.role === 'admin' && (
+              <Link href="/reviews" className="text-text-muted hover:text-text-primary text-sm font-body transition-colors">
+                Reviews
+              </Link>
+            )}
           </div>
 
           {/* CTA + User */}
@@ -94,6 +98,9 @@ export default function Navbar() {
             {user ? (
               <>
                 <Link href="/dashboard" className="text-text-muted hover:text-primary py-2 border-b border-border/50" onClick={() => setMenuOpen(false)}>Dashboard</Link>
+                {user.role === 'admin' && (
+                  <Link href="/reviews" className="text-text-muted hover:text-primary py-2 border-b border-border/50" onClick={() => setMenuOpen(false)}>Reviews</Link>
+                )}
                 <button onClick={() => { logout(); setMenuOpen(false); }} className="text-left text-red-400 py-2">Sign Out</button>
               </>
             ) : (

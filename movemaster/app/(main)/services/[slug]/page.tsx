@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ReviewCard from '@/components/reviews/ReviewCard';
-import { services, reviews, crew, faqs } from '@/data';
+import { services, crew, faqs } from '@/data';
 import { formatCurrency } from '@/lib/utils';
 import Accordion from '@/components/ui/Accordion';
 
@@ -24,7 +23,6 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   const service = services.find((s) => s.slug === params.slug);
   if (!service) notFound();
 
-  const serviceReviews = reviews.filter((r) => r.serviceType === service.serviceType).slice(0, 3);
   const serviceCrew = crew.filter((m) => m.specialties.some((sp) => sp.toLowerCase().includes(service.serviceType.replace('-', ' ')))).slice(0, 3);
   const serviceFaqs = faqs.filter((f) => f.category === 'pricing' || f.category === 'booking').slice(0, 5);
   const priceUnit = service.priceUnit === 'hour' ? '/hr' : service.priceUnit === 'per-room' ? '/room' : ' flat';
@@ -75,15 +73,6 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                     ))}
                   </ul>
                 </div>
-
-                {serviceReviews.length > 0 && (
-                  <div>
-                    <h2 className="font-heading text-3xl text-text-primary mb-6">CLIENT REVIEWS</h2>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {serviceReviews.map((r) => <ReviewCard key={r.id} review={r} compact />)}
-                    </div>
-                  </div>
-                )}
 
                 <div>
                   <h2 className="font-heading text-3xl text-text-primary mb-6">FAQ</h2>

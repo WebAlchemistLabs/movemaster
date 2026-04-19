@@ -5,20 +5,19 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/services/ServiceCard';
 import CrewCard from '@/components/crew/CrewCard';
-import ReviewCard from '@/components/reviews/ReviewCard';
-import { services, crew, reviews, cities, companyStats, pricingTiers } from '@/data';
+import { services, crew, cities, companyStats, pricingTiers } from '@/data';
 
 const whyUs = [
   { icon: <Shield size={24} />, title: 'Fully Insured & Licensed', desc: 'CVOR licensed, WSIB covered, and insured up to $2 million. Your belongings are protected.' },
-  { icon: <Truck size={24} />, title: 'GPS-Tracked Trucks', desc: 'Every truck is GPS-tracked. Share a live link with your family so everyone knows where your move is.' },
-  { icon: <CheckCircle size={24} />, title: 'Background-Checked Crew', desc: 'Every team member is background checked, referenced, and trained before their first job.' },
+  { icon: <Truck size={24} />, title: 'GPS Tracked Trucks', desc: 'Every truck is GPS tracked. Share a live link with your family so everyone knows where your move is.' },
+  { icon: <CheckCircle size={24} />, title: 'Background Checked Crew', desc: 'Every team member is background checked, referenced, and trained before their first job.' },
   { icon: <Package size={24} />, title: 'Free Padding & Wrapping', desc: 'Heavy blankets, stretch wrap, and protective materials are included in every move at no extra charge.' },
-  { icon: <Phone size={24} />, title: 'Real-Time Updates', desc: 'Your coordinator keeps you informed throughout the entire move. No radio silence, no surprises.' },
+  { icon: <Phone size={24} />, title: 'Real Time Updates', desc: 'Your coordinator keeps you informed throughout the entire move. No radio silence, no surprises.' },
   { icon: <Award size={24} />, title: 'No Hidden Fees', desc: 'Our quotes show exactly what you pay. Fuel surcharge included. No surprise charges at the end.' },
 ];
 
 const steps = [
-  { num: '01', title: 'Get Your Free Quote', desc: 'Fill out our 5-step online form or call us. Get a detailed price breakdown in minutes.' },
+  { num: '01', title: 'Get Your Free Quote', desc: 'Fill out our 5 step online form or call us. Get a detailed price breakdown in minutes.' },
   { num: '02', title: 'Book & Confirm', desc: 'Reserve your date with a 20% deposit. Your coordinator will call within 2 hours to confirm details.' },
   { num: '03', title: 'We Pack & Load', desc: 'Our crew arrives on time, wraps everything carefully, and loads your truck with military precision.' },
   { num: '04', title: 'Delivered Safe', desc: 'Everything arrives at your new home intact. We unload, reassemble furniture, and clean up.' },
@@ -26,10 +25,9 @@ const steps = [
 
 export default function HomePage() {
   const featuredCrew = crew.filter((c) => c.featured);
-  const topReviews = reviews.slice(0, 3);
   const recentPosts = [
     { slug: 'how-to-pack-kitchen-for-moving', title: '10 Pro Tips for Packing Your Kitchen Like a Moving Expert', excerpt: 'The kitchen is the hardest room to pack. Here is how our professional packers approach it.', category: 'tips', readTime: 6, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=500&fit=crop' },
-    { slug: 'moving-toronto-guide-2024', title: 'The Complete Guide to Moving in Toronto: What Nobody Tells You', excerpt: 'Parking permits, elevator bookings, building restrictions — everything you need to know.', category: 'local', readTime: 8, image: 'https://images.unsplash.com/photo-1517090504586-fde19ea6066f?w=800&h=500&fit=crop' },
+    { slug: 'moving-toronto-guide-2024', title: 'The Complete Guide to Moving in Toronto: What Nobody Tells You', excerpt: 'Parking permits, elevator bookings, building restrictions, everything you need to know.', category: 'local', readTime: 8, image: 'https://images.unsplash.com/photo-1517090504586-fde19ea6066f?w=800&h=500&fit=crop' },
     { slug: 'downsizing-guide-for-seniors', title: 'Downsizing After 60: A Compassionate Guide to Moving Less Stuff', excerpt: 'Letting go of decades of belongings is one of the hardest emotional challenges in moving.', category: 'guides', readTime: 7, image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop' },
   ];
 
@@ -39,7 +37,7 @@ export default function HomePage() {
       <main>
         {/* HERO */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          <Image src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80" alt="Moving truck on a highway" fill className="object-cover" priority />
+          <Image src="https://i.pinimg.com/1200x/f6/ab/6a/f6ab6a61aa7573700bd412b612898bc7.jpg" alt="Moving truck on the highway" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-bg/80 via-bg/70 to-bg" />
           <div className="absolute inset-0 bg-gradient-to-r from-bg/60 to-transparent" />
 
@@ -52,7 +50,7 @@ export default function HomePage() {
                 MOST.
               </h1>
               <p className="text-text-muted text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
-                14 years. 12,400+ moves. 48 background-checked crew members across 15 cities. From a studio apartment to a 4-bedroom home — we handle it all.
+                14 years. 12,400+ moves. 48 background checked crew members across 15 cities. From a studio apartment to a 4 bedroom home, we handle it all.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link href="/quote" className="bg-primary hover:bg-primary-hover text-white font-heading text-lg tracking-wider uppercase px-8 py-4 rounded-sm transition-colors text-center animate-pulse-orange">
@@ -85,7 +83,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="grid grid-cols-3 md:grid-cols-6 gap-6 text-center">
               {Object.entries(companyStats).map(([key, val]) => {
-                const labels: Record<string, string> = { totalMoves: 'Total Moves', yearsInBusiness: 'Years in Business', citiesCovered: 'Cities Served', customerRating: 'Customer Rating', crewMembers: 'Crew Members', onTimeRate: 'On-Time Rate' };
+                const labels: Record<string, string> = { totalMoves: 'Total Moves', yearsInBusiness: 'Years in Business', citiesCovered: 'Cities Served', customerRating: 'Customer Rating', crewMembers: 'Crew Members', onTimeRate: 'On Time Rate' };
                 return (
                   <div key={key}>
                     <p className="font-heading text-2xl md:text-3xl text-white">{val}</p>
@@ -161,22 +159,6 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* REVIEWS */}
-        <section className="section-pad bg-surface">
-          <div className="container-custom">
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <p className="text-primary font-mono-custom text-sm tracking-widest uppercase mb-2">Real Clients, Real Results</p>
-                <h2 className="font-heading text-4xl md:text-5xl text-text-primary">WHAT OUR CLIENTS SAY</h2>
-              </div>
-              <Link href="/reviews" className="hidden md:flex items-center gap-2 text-primary text-sm hover:gap-3 transition-all">All Reviews <ArrowRight size={14} /></Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {topReviews.map((r) => <ReviewCard key={r.id} review={r} />)}
             </div>
           </div>
         </section>

@@ -1,206 +1,84 @@
-# MoveMaster Pro
-### Full-Stack SaaS Platform for Modern Moving Companies
+# MoveMaster Pro — API Server with SQLite Database
 
-MoveMaster Pro is a production-grade SaaS platform designed to streamline operations for moving companies through real-time pricing, automated booking workflows, and a fully integrated admin dashboard.
+Full Node.js/Express backend with persistent SQLite bookkeeping database.
 
----
-
-## 🔗 Live Demo & Repository
-- Live Demo: [Coming Soon]
-- GitHub: https://github.com/WebAlchemistLabs/movemaster.git
-
----
-
-## 📌 Problem
-
-Traditional moving companies rely on:
-- Manual quote calculations
-- Phone/email booking processes
-- Disorganized scheduling systems
-- Inconsistent pricing models
-
-This leads to:
-- Lost revenue opportunities
-- Poor customer experience
-- Inefficient operations
-- High administrative overhead
-
----
-
-## 💡 Solution
-
-MoveMaster Pro digitizes and automates the entire moving service workflow.
-
-It provides:
-- Instant, accurate pricing based on real business rules
-- A guided multi-step booking experience for customers
-- A centralized dashboard for managing jobs, crews, and bookings
-- Scalable architecture for growing service-based businesses
-
----
-
-## ⚡ Key Features
-
-### Real-Time Quote Engine
-Dynamic pricing system that calculates moving costs based on:
-- Property size
-- Distance (local vs long-distance)
-- Packing services
-- Storage requirements
-- Specialty items
-- Floor level / accessibility
-
-**Impact:** Eliminates manual quoting and improves pricing accuracy.
-
----
-
-### Multi-Step Booking System
-Structured booking flow with validation and state management:
-- Customer details
-- Move details
-- Service selection
-- Price breakdown
-- Confirmation
-
-**Impact:** Reduces friction and increases conversion rates.
-
----
-
-### Admin Dashboard
-Full operational control panel:
-- Booking management
-- Customer data tracking
-- Job scheduling
-- Service configuration
-
-**Impact:** Centralizes business operations into one platform.
-
----
-
-### Authentication System
-Secure user authentication with session handling and protected routes.
-
-**Impact:** Enables personalized dashboards and secure data access.
-
----
-
-### Payment Integration (Stripe - Demo Mode)
-Supports deposit-based payments for booking confirmation.
-
-**Impact:** Introduces monetization and reduces no-shows.
-
----
-
-## 🧱 Tech Stack
-
-**Frontend:**
-- Next.js 14 (App Router)
-- TypeScript (Strict Mode)
-- Tailwind CSS
-
-**Backend:**
-- Node.js
-- Express.js
-
-**Database / Data Layer:**
-- Firebase Firestore
-- LocalStorage fallback (demo-mode architecture)
-
-**Authentication:**
-- Firebase Auth
-
-**Payments:**
-- Stripe (Demo Mode)
-
-**State Management:**
-- React Context + Custom Hooks
-
-**Tooling:**
-- ESLint, Prettier
-- Git & GitHub
-
----
-
-## 🏗️ Architecture Overview
-
-MoveMaster Pro uses a modular full-stack architecture:
-
-- **Frontend:** Next.js App Router with server/client components
-- **Backend API:** Express server handling business logic and payments
-- **Data Layer:** Firebase with a fallback system enabling full offline/demo operation
-- **State Management:** Custom hooks for pricing logic and booking flow
-- **Routing Strategy:** Segmented route groups for scalability (main, auth, dashboard, admin)
-
-This structure allows:
-- Scalability
-- Clear separation of concerns
-- Production-level extensibility
-
----
-
-## 🧠 Advanced Business Logic
-
-This is not a basic CRUD application.
-
-Key logic includes:
-- Multi-variable pricing engine with conditional rules
-- Real-time quote recalculation
-- Tiered service pricing
-- Distance-based cost adjustments
-- Booking workflow state persistence
-- Fallback data layer for offline/demo use
-
----
-
-## 🖥️ Screenshots
-
-> Add screenshots here:
-- Landing page
-- Quote calculator
-- Booking flow
-- Dashboard
-
----
-
-## ⚙️ Installation
+## Quick Start
 
 ```bash
-git clone https://github.com/WebAlchemistLabs/movemaster-pro.git
-cd movemaster-pro
 npm install
-npm run dev
-🚀 Future Improvements
-Real-time scheduling calendar
-SMS/email notification system
-Role-based access control (RBAC)
-Production Stripe integration
-Analytics dashboard for business insights
-Multi-company SaaS support (true multi-tenant architecture)
-🧩 Why This Project Stands Out
+cp .env.example .env
+npm run db:seed    # ← Creates database with 3 years of history
+npm run dev        # ← Starts server at http://localhost:4000
+```
 
-Most portfolio projects:
+## Database
 
-Are simple CRUD apps
-Lack real-world business logic
-Do not simulate production systems
+SQLite database at `./data/movemaster.db` — persists between restarts.
 
-MoveMaster Pro is different.
+```bash
+npm run db:seed    # Seed with demo data (29 jobs, 20 clients)
+npm run db:reset   # Wipe and re-seed fresh
+```
 
-It demonstrates:
+## Login Credentials
 
-Complex pricing algorithms
-Full customer → booking → payment flow
-Real SaaS architecture patterns
-Scalable design decisions
-Business-oriented thinking
+| Email | Password | Role |
+|---|---|---|
+| admin@movemaster.pro | admin1234 | Admin |
+| demo@movemaster.pro | demo1234 | Customer |
 
-This project reflects the level of thinking required for production systems, not classroom assignments.
+## API Routes
 
-👤 Author
+All routes prefixed with `/api/v1`
 
-Marlon Haynes
-Full-Stack Developer | Frontend Specialist | SaaS Builder
+### Auth
+- `POST /auth/register` — Create account
+- `POST /auth/login` — Login
+- `POST /auth/refresh` — Refresh token
+- `POST /auth/demo` — Demo login
+- `GET  /auth/me` — Get profile
+- `PATCH /auth/me` — Update profile
 
-Focused on building scalable, business-driven web applications that solve real-world problems.
+### Quotes
+- `POST /quotes/estimate` — Instant price estimate (no save)
+- `POST /quotes` — Submit quote request
+- `GET  /quotes/mine` — My quotes (customer)
+- `GET  /quotes` — All quotes (admin)
+- `PATCH /quotes/:id/status` — Update status (admin)
+- `POST /quotes/:id/confirm-deposit` — Confirm deposit paid
 
-GitHub: https://github.com/WebAlchemistLabs
+### Bookkeeping (Admin only)
+- `GET /bookkeeping/dashboard` — Full business stats
+- `GET /bookkeeping/jobs` — All jobs with filters
+- `GET /bookkeeping/jobs/:id` — Job detail + invoice + transactions
+- `PATCH /bookkeeping/jobs/:id/status` — Update job + invoice
+- `GET /bookkeeping/clients` — Client list
+- `GET /bookkeeping/clients/:id` — Client profile + history
+- `GET /bookkeeping/invoices` — All invoices
+- `GET /bookkeeping/invoices/:id` — Invoice detail
+- `GET /bookkeeping/transactions` — Payment ledger
+- `POST /bookkeeping/transactions` — Record manual payment
+- `GET /bookkeeping/report?year=2024` — Financial report
+- `GET /bookkeeping/messages` — Contact messages
+- `PATCH /bookkeeping/messages/:id/read` — Mark read
+
+### Health
+- `GET /health` — Server status
+
+## Database Schema
+
+- **users** — Auth accounts with roles
+- **clients** — Enriched customer profiles with lifetime stats
+- **jobs** — All quotes/bookings with full move details
+- **invoices** — Generated invoice per job with line items
+- **transactions** — Payment ledger (deposits + balance payments)
+- **contact_messages** — Website contact form submissions
+
+## Seeded Data Summary
+
+- 20 clients with realistic Southern Ontario profiles
+- 29 jobs: 20 completed, 1 in-progress, 4 confirmed, 4 pending
+- $46,000+ in completed revenue
+- Full invoice history
+- Payment transaction ledger
+- 5 contact messages (2 read, 3 unread)

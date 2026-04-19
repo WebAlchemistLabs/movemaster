@@ -19,7 +19,7 @@ export default function CitiesPage() {
       <main className="pt-20">
         <div className="bg-surface py-16 border-b border-border">
           <div className="container-custom">
-            <SectionHeader eyebrow="15 Cities. One Company." title="WHERE WE MOVE" subtitle="From Toronto to Windsor, Hamilton to Barrie — our GPS-tracked fleet and experienced crews cover all of Southern Ontario." />
+            <SectionHeader eyebrow="15 Cities. One Company." title="WHERE WE MOVE" subtitle="From Toronto to Windsor, Hamilton to Barrie our GPS tracked fleet and experienced crews cover all of Southern Ontario." />
           </div>
         </div>
         <section className="section-pad bg-bg">
